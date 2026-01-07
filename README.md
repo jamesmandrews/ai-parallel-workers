@@ -69,6 +69,12 @@ This opens a tmux session with 5 Claude Code instances, each pre-configured with
 └── README.md                # This file
 ```
 
+## Important: You Are the Orchestrator
+
+The 5 terminals don't work autonomously - **you drive each one**. You context-switch between parallel conversations, giving instructions and checking progress. The power comes from running multiple focused work streams simultaneously.
+
+**New to this workflow?** Start with the [Getting Started Guide](docs/GETTING-STARTED.md) for a step-by-step walkthrough.
+
 ## How It Works
 
 ### File-Based Coordination
@@ -121,6 +127,7 @@ npm create vite@latest . -- --template react-ts
 
 ## Documentation
 
+- [Getting Started Guide](docs/GETTING-STARTED.md) - Step-by-step walkthrough with examples
 - [Workflow Details](.claude/workflows/README.md) - Complete workflow documentation
 - [Terminal 1 - Architect](.claude/workflows/terminal-1-architect.md)
 - [Terminal 2 - Builder](.claude/workflows/terminal-2-builder.md)
@@ -131,9 +138,10 @@ npm create vite@latest . -- --template react-ts
 ## Tips for Effective Use
 
 1. **Start with Terminal 1** - Give the Architect your feature requirements first
-2. **Let them coordinate** - Terminals communicate via files automatically
-3. **Rotate your attention** - Check each terminal periodically for questions
-4. **Trust the verification loop** - Testing terminal catches integration issues
+2. **You orchestrate** - Context-switch between terminals, giving each instructions
+3. **Use the file system** - Tell terminals to check `docs/tasks/` for assignments
+4. **Rotate your attention** - Check each terminal periodically for questions
+5. **Trust the verification loop** - Testing terminal catches integration issues
 
 ## License
 
