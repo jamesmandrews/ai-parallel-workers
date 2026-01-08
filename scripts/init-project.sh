@@ -25,6 +25,19 @@ cd "$PROJECT_ROOT" || exit 1
 echo -e "${BLUE}AI Workers - Project Initializer${NC}"
 echo ""
 
+# Check if project has already been initialized
+if [ -d ".git" ]; then
+    if git log --oneline 2>/dev/null | grep -q "Initial commit: Project setup from AI Workers boilerplate"; then
+        echo -e "${RED}This project appears to already be initialized.${NC}"
+        echo -e "${YELLOW}The initialization script has already been run on this repository.${NC}"
+        echo ""
+        echo "If you need to re-initialize, manually remove the .git directory first:"
+        echo "  rm -rf .git"
+        echo ""
+        exit 1
+    fi
+fi
+
 # Check if .git exists
 if [ ! -d ".git" ]; then
     echo -e "${YELLOW}No git repository found. Initializing fresh...${NC}"
@@ -87,4 +100,7 @@ echo "  3. Add your code:        Initialize your framework of choice"
 if [ -n "$REMOTE_URL" ]; then
     echo "  4. Push to remote:       git push -u origin main"
 fi
+echo ""
+echo -e "${YELLOW}Tip:${NC} You can remove this initialization script if you no longer need it:"
+echo "  rm scripts/init-project.sh"
 echo ""
