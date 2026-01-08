@@ -14,15 +14,24 @@ This boilerplate provides a ready-to-use structure for starting new projects wit
 ### Prerequisites
 
 - [Claude Code](https://claude.ai/claude-code) installed (`claude` command available)
-- [tmux](https://github.com/tmux/tmux) installed (`brew install tmux` on macOS)
+- One of the following terminal multiplexers:
+  - [Zellij](https://zellij.dev/) - **Default** (`brew install zellij` on macOS)
+  - [tmux](https://github.com/tmux/tmux) (`brew install tmux` on macOS)
+  - [iTerm2](https://iterm2.com/) (macOS only)
 
 ### Launch the Workflow
 
 ```bash
+# Using Zellij (default)
 ./scripts/launch-workflow.sh
+
+# Or explicitly choose your terminal multiplexer
+./scripts/launch-workflow.sh --zellij
+./scripts/launch-workflow.sh --tmux
+./scripts/launch-workflow.sh --iterm
 ```
 
-This opens a tmux session with 5 Claude Code instances, each pre-configured with its role.
+This opens 5 Claude Code instances in a split-pane layout, each pre-configured with its role.
 
 ## The 5 Terminals
 
@@ -65,7 +74,7 @@ This opens a tmux session with 5 Claude Code instances, each pre-configured with
 │   ├── bugs/                # Bug reports from testing
 │   └── completed/           # Archived completed work
 ├── scripts/
-│   └── launch-workflow.sh   # tmux launcher
+│   └── launch-workflow.sh   # Multi-terminal launcher (Zellij/tmux/iTerm2)
 └── README.md                # This file
 ```
 
@@ -116,14 +125,35 @@ npm create vite@latest . -- --template react-ts
 "Create a spec for user authentication with login, signup, and password reset"
 ```
 
-## tmux Basics
+## Keyboard Shortcuts
+
+### Zellij (Default)
 
 | Command | Action |
 |---------|--------|
-| `Ctrl+b` then arrows | Navigate between terminals |
-| `Ctrl+b` then `z` | Zoom/unzoom current terminal |
+| `Alt` + Arrow keys | Navigate between panes |
+| `Alt+n` / `Alt+p` | Next / Previous pane |
+| `Ctrl+p` then `f` | Fullscreen current pane |
+| `Ctrl+o` then `d` | Detach (leave running in background) |
+| `zellij attach` | Reattach to session |
+
+### tmux
+
+| Command | Action |
+|---------|--------|
+| `Ctrl+b` then arrows | Navigate between panes |
+| `Ctrl+b` then `z` | Zoom/unzoom current pane |
 | `Ctrl+b` then `d` | Detach (leave running in background) |
 | `tmux attach -t claude-workflow` | Reattach to session |
+
+### iTerm2
+
+| Command | Action |
+|---------|--------|
+| `Cmd+Option` + Arrow keys | Navigate between panes |
+| `Cmd+]` / `Cmd+[` | Next / Previous pane |
+| `Cmd+Shift+Enter` | Maximize current pane |
+| `Cmd+W` | Close pane |
 
 ## Documentation
 
