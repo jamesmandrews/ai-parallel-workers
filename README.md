@@ -5,6 +5,21 @@ A boilerplate for running 5 parallel Claude Code instances as specialized AI age
 > "I run 5 Claudes in parallel in my terminal. I number my tabs 1-5, and use system notifications to know when a Claude needs input."
 > — Boris Cherny, Creator of Claude Code
 
+## Table of Contents
+
+- [What This Is](#what-this-is)
+- [Quick Start](#quick-start)
+- [The 5 Terminals](#the-5-terminals)
+- [Project Structure](#project-structure)
+- [Important: You Are the Orchestrator](#important-you-are-the-orchestrator)
+- [How It Works](#how-it-works)
+- [Initializing a New Project](#initializing-a-new-project)
+- [Adapting for Your Project](#adapting-for-your-project)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Documentation](#documentation)
+- [Tips for Effective Use](#tips-for-effective-use)
+- [License](#license)
+
 ## What This Is
 
 This boilerplate provides a ready-to-use structure for starting new projects with a 5-terminal Claude Code workflow. Each terminal has a specialized role, enabling one developer to operate with the productivity of an entire engineering team.
