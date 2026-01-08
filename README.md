@@ -74,7 +74,8 @@ This opens 5 Claude Code instances in a split-pane layout, each pre-configured w
 │   ├── bugs/                # Bug reports from testing
 │   └── completed/           # Archived completed work
 ├── scripts/
-│   └── launch-workflow.sh   # Multi-terminal launcher (Zellij/tmux/iTerm2)
+│   ├── launch-workflow.sh   # Multi-terminal launcher (Zellij/tmux/iTerm2)
+│   └── init-project.sh      # Initialize a fresh project from boilerplate
 └── README.md                # This file
 ```
 
@@ -103,6 +104,23 @@ Terminal 4 (Testing) continuously:
 - Runs tests against specifications
 - Reports bugs that other terminals fix
 - Creates a feedback loop ensuring quality
+
+## Initializing a New Project
+
+When starting a new project from this boilerplate, use the initialization script to set up a clean git history:
+
+```bash
+./scripts/init-project.sh
+```
+
+This script will:
+- Remove the boilerplate's git history
+- Initialize a fresh git repository
+- Optionally rename the project (updates README title)
+- Optionally configure a git remote
+- Create an initial commit
+
+After running the script, you'll have a clean starting point for your own project with all the workflow structure in place.
 
 ## Adapting for Your Project
 
